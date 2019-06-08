@@ -136,7 +136,7 @@ const simArray = (data) => {
 }
 
 axios.get('http://www.simulationcraft.org/reports/').then(res => {
-    const fileName = res.data.slice(res.data.lastIndexOf("</a>") - 12, res.data.lastIndexOf("</a>"));
+    const fileName = res.data.slice(res.data.lastIndexOf("Raid.txt") - 4, res.data.lastIndexOf("Raid.txt") + 8);
 
     axios.get(`http://www.simulationcraft.org/reports/${fileName}`).then(response => {
         simArray(response.data);
